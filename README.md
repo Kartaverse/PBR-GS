@@ -16,8 +16,15 @@ The most promising idea comes from Ben Houston's paper "[PBR extensions to Wavef
 
 ### Further Reading Materials
 
-The Library of Congress has a document about the [Wavefront MTL file format](https://www.loc.gov/preservation/digital/formats/fdd/fdd000508.shtml). Check out Wikipedia for insights into the core specifications of the [ply file format](https://en.wikipedia.org/wiki/PLY_(file_format)). Also look at the PDF version of Greg Turk's "[The PLY Polygon File Format](https://gamma.cs.unc.edu/POWERPLANT/papers/ply.pdf) document.
+The Library of Congress has a document about the [Wavefront MTL file format](https://www.loc.gov/preservation/digital/formats/fdd/fdd000508.shtml). Check out Wikipedia for insights into the core specifications of the [ply file format](https://en.wikipedia.org/wiki/PLY_(file_format)). Also look at the PDF version of Greg Turk's [The PLY Polygon File Format](https://gamma.cs.unc.edu/POWERPLANT/papers/ply.pdf) document.
 
+### Timecode Addition
+
+To allow sidecar files like audio tracks to sync up with 4DGS sequences, it is useful to add an SMPTE formatted timecode ("00:00:00:00") attribute to the PLY file. One could also include a frame number element if it is useful.
+
+```
+property char timecode[11]
+```
 
 ### PBR Additions
 
@@ -129,5 +136,6 @@ property float rot_0
 property float rot_1
 property float rot_2
 property float rot_3
+property char timecode[11]
 end_header
 ```
