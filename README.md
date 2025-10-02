@@ -5,8 +5,8 @@ Physically Based Rendering of Gaussian Splats
 ## PBR GS PLY File Format Spec V1
 
 Prepared 2025-07-29  
-Written By: Andrew Hazelden <andrew@andrewhazelden.com>  
-Developed in collaboration with [Eric Paré](eric@xangle.team) and [Didier Muanza](didier.muanza@gmail.com)  
+Written By: [Andrew Hazelden](mailto:andrew@andrewhazelden.com)  
+Developed in collaboration with [Eric Paré](mailto:eric@xangle.team) and [Didier Muanza](mailto:didier.muanza@gmail.com)  
 
 ### Overview
 
