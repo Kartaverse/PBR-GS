@@ -65,6 +65,7 @@ When these PBR extension for 3DGS ideas are applied, it results in a PBR compati
 ```
 ply
 format binary_little_endian 1.0
+property char timecode[11]
 element vertex 3000000
 property float x
 property float y
@@ -136,6 +137,5 @@ property float rot_0
 property float rot_1
 property float rot_2
 property float rot_3
-property char timecode[11]
 end_header
 ```
