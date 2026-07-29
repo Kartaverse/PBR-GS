@@ -5,6 +5,7 @@ Physically Based Rendering of Gaussian Splats
 ## PBR GS PLY File Format Spec V1
 
 Prepared 2025-07-29  
+Last Updated 2026-07-29  
 Written By: [Andrew Hazelden](mailto:andrew@andrewhazelden.com)  
 Developed in collaboration with [Eric Paré](mailto:eric@xangle.team) and [Didier Muanza](mailto:didier.muanza@gmail.com)  
 
@@ -25,6 +26,21 @@ To allow sidecar files like audio tracks to sync up with 4DGS sequences, it is u
 ```
 property char timecode[11]
 ```
+
+### Motion Blur Addition
+
+We can render 4DGS sequences with accurate 3D motion blur with the addition of a per-point sample "velocity vector" property to the PLY file.
+
+```
+property float vx
+property float vy
+property float vz
+```
+
+Realistic motion blur is computed based on the point-sample's movement between the current and previous PLY frame in the sequence. The correct level of blur to apply to a point is determined using the velocity vector combined with the time step value (sourced from the timecode property).
+
+The "vx/vy/vz" PLY channels hold the velocity data. When imported into a DCC package or renderer, the 3D vector information is typcially converted into a `Vec3f` array of 32-bit floating-point numbers. VFX industry file formats like Alembic treat this array as a `V3fArrayProperty`.
+
 
 ### PBR Additions
 
@@ -62,6 +78,7 @@ nz = norm map blue channel
 ### PBR PLY Properties
 
 When these PBR extension for 3DGS ideas are applied, it results in a PBR compatible 3DGS PLY file with the following header properties:
+
 ```
 ply
 format binary_little_endian 1.0
@@ -137,5 +154,8 @@ property float rot_0
 property float rot_1
 property float rot_2
 property float rot_3
+property float vx
+property float vy
+property float vz
 end_header
 ```
