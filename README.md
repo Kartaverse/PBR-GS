@@ -57,7 +57,7 @@ The biggest advantage of temporally stable 3DGS/4DGS sequences is that you can m
 
 This enables more advanced workflows, such as optical flow-retiming of volumetric captures to support high-speed or slow-motion (bullet-time like) interpolated effects, where the motion blur length and motion characteristics maintain their natural cinematic look. The end result is the visually realistic retiming of splats without the traditional abrupt "stepping" or notched look that comes from naïve .ply file sequences being frame‑held.
 
-Through the use of synthetic motion sub‑steps and "3D motion vector concatenation" approaches, we are able to match various delivery requirements for framerates such as 120, 90, 60, 48, 30, or 24 FPS, without introducing unnatural judder or picket‑fence motion artifacts in the final output.
+Through the use of retiming with synthetic motion sub‑steps and "3D motion vector concatenation" approaches, we are able to match various delivery requirements for framerates such as 120, 90, 60, 48, 30, or 24 FPS, without introducing unnatural judder or picket‑fence motion artifacts in the final output. The motion vector data allows the simulation of real-world shutter angles for 4DGS rendered content such as a 180-degree shutter angle which is common with a standard film camera, or a 360-degree angle shutter angle which represents a full frame of blur.
 
 In many ways, this provides the volumetric 3D scanning equivalent of Douglas Trumbull's earlier HFR (High-Frame Rate) [MAGI 120 FPS stereo 3D process](https://www.youtube.com/watch?v=-Am2CbRLOPI) that was used in the pioneering [UFOTOG project](https://www.youtube.com/watch?v=wd6_oz7KBWk).
 
