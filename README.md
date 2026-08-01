@@ -110,6 +110,9 @@ property float z
 property float nx
 property float ny
 property float nz
+property float vx
+property float vy
+property float vz
 property float aniso
 property float anisor
 property float ke
@@ -174,8 +177,5 @@ property float rot_0
 property float rot_1
 property float rot_2
 property float rot_3
-property float vx
-property float vy
-property float vz
 end_header
 ```
