@@ -43,11 +43,9 @@ The "vx/vy/vz" PLY channels hold the velocity data. When imported into a DCC pac
 
 ### Temporal Consistency Point ID Addition
 
-Adding a unique pointIds property to each point sample in a .ply file provides the functionality of a classic "per-particle ID" capability to 3D gaussian splat video workflows. When generating a new 3DGS/4DGS file sequence, the individual pointIds values are tracked and matched over time.
+Adding a unique pointIds property to each point sample in a .ply file provides the functionality of a classic "per-particle ID" capability to 3D gaussian splat video workflows. When generating a new 3DGS/4DGS file sequence, the individual pointIds values are tracked and matched over time. This optimization results in smooth and reliable motion consistency, as well as efficient data storage through point sample de-duplication. At the per-frame level, a .ply file sequence can vary the amount of point-samples present but at a global sequence level the pointIds are linked temporally.
 
-This optimization results in smooth and reliable motion consistency, as well as efficient data storage through point sample de-duplication. At the per-frame level, a .ply file sequence can vary the amount of point-samples present but at a global sequence level the pointIds are linked temporally.
-
-This gives us a way to track an individual point-sample's "particle lifespan" over a longer 4DGS clip.
+This new property gives us a way to track an individual point-sample's "particle lifespan" over a longer 4DGS clip:
 
 ```
 property float pointIds
@@ -55,15 +53,11 @@ property float pointIds
 
 This approach avoids common pitfalls in simplistic 3DGS-based file sequences where constant per-splat flickering and other artifacts would appear due to a lack of temporal coherence in the dataset.
 
-The biggest advantage of temporally stable 3DGS/4DGS sequences is that you can make better use of computed optical-flow based motion vector velocity data.
+The biggest advantage of temporally stable 3DGS/4DGS sequences is that you can make better use of computed optical-flow based motion vector velocity data. Since the individual pointIds properties are merged for common point samples across the sequence, each of your motion blur samples becomes temporally consistent. You can even render motion details like circular motion blur on radially moving objects, because you can walk forwards and backwards by several frames at a time when computing cross-frame motion trajectories. 
 
-Since the individual pointIds properties are merged, for common point samples across the sequence, each of your motion blur samples becomes temporally consistent. You can even render motion details like circular motion blur on radially moving objects, because you can walk forwards and backwards by several frames at a time when computing cross-frame motion trajectories. 
+This enables more advanced workflows, such as optical flow-retiming of volumetric captures to support high-speed or slow-motion (bullet-time like) interpolated effects, where the motion blur length and motion characteristics maintain their natural cinematic look. The end result is the visually realistic retiming of splats without the traditional abrupt "stepping" or notched look that comes from naïve .ply file sequences being frame‑held.
 
-This enables more advanced workflows, such as optical flow-retiming of volumetric captures to support high-speed or slow-motion (bullet-time like) interpolated effects, where the motion blur length and motion characteristics maintain their natural cinematic look. 
-
-The end result is the visually realistic retiming of splats without the traditional abrupt "stepping" or notched look that comes from naïve .ply file sequences being frame‑held.
-
-hrough the use of synthetic motion sub‑steps and "3D motion vector concatenation" approaches, we are able to match various delivery requirements for framerates such as 120, 90, 60, 48, 30, or 24 FPS, without introducing unnatural judder or picket‑fence motion artifacts in the final output.
+Through the use of synthetic motion sub‑steps and "3D motion vector concatenation" approaches, we are able to match various delivery requirements for framerates such as 120, 90, 60, 48, 30, or 24 FPS, without introducing unnatural judder or picket‑fence motion artifacts in the final output.
 
 In many ways, this provides the volumetric 3D scanning equivalent of Douglas Trumbull's earlier HFR (High-Frame Rate) [MAGI 120 FPS stereo 3D process](https://www.youtube.com/watch?v=-Am2CbRLOPI) that was used in the pioneering [UFOTOG project](https://www.youtube.com/watch?v=wd6_oz7KBWk).
 
