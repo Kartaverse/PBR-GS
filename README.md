@@ -59,7 +59,7 @@ This enables more advanced workflows, such as optical flow-retiming of volumetri
 
 Through the use of retiming with synthetic motion sub‑steps and "3D motion vector concatenation" approaches, we are able to match various delivery requirements for framerates such as 120, 90, 60, 48, 30, or 24 FPS, without introducing unnatural judder or picket‑fence motion artifacts in the final output. The motion vector data allows the simulation of real-world shutter angles for 4DGS rendered content such as a 180-degree shutter angle which is common with a standard film camera, or a 360-degree angle shutter angle which represents a full frame of blur.
 
-In many ways, this [provides the volumetric 3D scanning equivalent](https://medium.com/@andrewhazelden/applying-magi-high-frame-rate-capture-ideas-to-4d-volumetric-scanning-48c87e61f7d7?postPublishedType=repub) of Douglas Trumbull's earlier HFR (High-Frame Rate) [MAGI 120 FPS stereo 3D process](https://www.youtube.com/watch?v=-Am2CbRLOPI) that was used in the pioneering [UFOTOG project](https://www.youtube.com/watch?v=wd6_oz7KBWk).
+In many ways, this [provides the 4D volumetric scanning equivalent](https://medium.com/@andrewhazelden/applying-magi-high-frame-rate-capture-ideas-to-4d-volumetric-scanning-48c87e61f7d7?postPublishedType=repub) of Douglas Trumbull's earlier HFR (High-Frame Rate) [MAGI 120 FPS stereo 3D process](https://www.youtube.com/watch?v=-Am2CbRLOPI) that was used in the pioneering [UFOTOG project](https://www.youtube.com/watch?v=wd6_oz7KBWk).
 
 ### PBR Additions
 
