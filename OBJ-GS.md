@@ -1,6 +1,6 @@
 # **The OBJ-GS Guide**
 
-Hi. Welcome to the initial draft version of the "Wavefront OBJ | Gaussian Splatting" guide.
+Hi. Welcome to the initial draft version of the "Wavefront OBJ | Gaussian Splatting" guide. An up-to-date version of this same content can be found on the [Kartaverse PBR-GS GitHub Repo](https://github.com/Kartaverse/PBR-GS/blob/master/OBJ-GS.md).
 
 This document describes a novel approach to convert the frozen (static) Alias | Wavefront .obj file format into something that continues forward, into an extended living file format. This extension to the established spec has transparent backwards compatibility that gracefully works with legacy 1996-2024 era OBJ parsers. 
 
@@ -27,7 +27,7 @@ Lightfielder Ops is intended to be used primarily as a rapid on-set previz/tech-
 # **Wavefront OBJ Format Extensions for VFX**
 
 Date Created: Sept 28, 2026 at 02:07 PM (UTC \-3)  
-Date Updated: Sept 29, 2026 at 06:51 PM (UTC \-3)  
+Date Updated: Sept 30, 2026 at 07:48 AM (UTC \-3)  
 Docs Written By: [Andrew Hazelden](mailto:andrew@andrewhazelden.com)  
 OBJ-GS Project Title Named By: [Didier Muanza](mailto:didier.muanza@gmail.com)
 
