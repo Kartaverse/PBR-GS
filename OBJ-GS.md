@@ -1,8 +1,8 @@
 # **The OBJ-GS Guide**
 
-Hi. Welcome to the initial draft version of the "Wavefront OBJ | Gaussian Splatting" guide. An up-to-date version of this same content can be found on the [Kartaverse PBR-GS GitHub Repo](https://github.com/Kartaverse/PBR-GS/blob/master/OBJ-GS.md).
+Hi. Welcome to the initial draft version of the "Wavefront OBJ | Gaussian Splatting" guide. An up-to-date version of this same content can be found on the [Lightfielder PBR-GS GitHub Repo](https://github.com/Lightfielder/PBR-GS/edit/master/OBJ-GS.md).
 
-This document describes a novel approach to convert the frozen (static) Alias | Wavefront .obj file format into something that continues forward, into an extended living file format. This extension to the established spec has transparent backwards compatibility that gracefully works with legacy 1996-2024 era OBJ parsers. 
+This document describes a novel approach to convert the frozen (static) Alias | Wavefront .obj file format into something that continues forward, into an extended living file format. This extension to the established spec has transparent backwards compatibility that gracefully works with legacy 1996-2024 era OBJ file parser code. 
 
 This guide adds several new parameters to the .mtl and .obj files, and ships with several suggestions for asset packaging conventions with the primary goal to keep this foundational 3D file format relevant for new and evolving workflows.
 
