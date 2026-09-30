@@ -16,7 +16,9 @@ I'm Andrew Hazelden, a compositing technical director (aka a comp TD) based out 
 
 My personal background, for the last 20 years+ is to build new immersive workflows for media projects I am directly attached to as an external consultant. This means in 2026 that my primary objective is to streamline multi-view "lightfield" based post-production efforts, and smooth things out with customized workflow automation tech. 
 
-After time off from January to September, this autumn I'm officially back into the "XR production" fray, again. I'm actively toying with the need to deploy solutions that simplify cross-vendor asset handoff, and multi-shot content delivery needs for multi-view centric intermediate assets. This means handling content pushed between multiple artists and teams, that are spread across the divide of a larger all-encompassing hybrid VFX/ML/3D Scanning/Volumetric video post workflow. 
+After time off from January to September, this autumn I'm officially back into the "XR production" fray, again. I'm actively toying with the need to deploy solutions that simplify cross-vendor asset handoff, and multi-shot content delivery needs. 
+
+The focus is to accelerate the creation of multi-view centric intermediate assets. This means handling content pushed between multiple artists and teams, that are spread across the divide of a larger all-encompassing hybrid VFX/ML/3D Scanning/Volumetric video post workflow. 
 
 This OBJ-GS paper's initial proving-ground test will be through the usage on my next R\&D project which is called "[Lightfielder Operators (Ops)](https://github.com/Lightfielder/LightfielderOperators)". The node-based "Ops" software was built as an experimental multi-view "test-bed" IDE (Integrated Development Environment) during my down time, at the start of the year. Ops runs as a standalone desktop / tablet based companion app. 
 
@@ -34,8 +36,8 @@ Edition: Draft Zero of the core idea:
 * Support a per-model .gz or .zip compressed folder based project hierarchy  
   * The data is archived as a "store compressed" asset similar to an OpenUSD file .usdz zipped container  
   * Zip/GZIP compression is fast to decode. They allow the scene data to be live-read by cross-platform compatible frameworks like the [z-lib library](https://en.wikipedia.org/wiki/Zlib), on-the-fly, without the need to pre-extract the files to disk first.  
-  * It should be mentioned in a \~2018-2020ish timescale that SketchFab allowed volumetric sequences of approx 120 frame durations to be sourced from zipped OBJ meshes and texture sequences.   
-* With OBJ folder compressed assets, we can store any of the following assets inside the file hierarchy:  
+  * It should be mentioned in a \~2018-2020ish timescale that SketchFab allowed volumetric sequences of approx 120 frame duration to be sourced from zipped OBJ meshes and texture sequences   
+* With OBJ folder compressed assets, we can store any of the following sidecar elements inside the OBJ project folder's hierarchy:  
   * Setup.json \- Automates loading the scene hierarchy and any user defined data records into a generic [Python dict](https://www.w3schools.com/python/python_dictionaries.asp) or [Lua Table](https://www.lua.org/pil/2.5.html) structure. The [JSON](https://www.json.org/json-en.html) file can act as a scene loading template to rapidly bootstrap the scene assembly processes. OR  
   * Scene.csv CSV ([Comma Separated Value](https://en.wikipedia.org/wiki/Comma-separated_values)) spreadsheet based asset instancing and referencing can work for a simplistic scene assembly approach with per-asset level model variations  
   * Readme.md guide \- A VFX vendor handoff document that explains how to translate the customized OBJ extension attributes and channel mappings when compared to the existing FBX/Alembic/OpenUSD file format specifications  
